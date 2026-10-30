@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DJ Weapon Store — UI preview</title>
+    <link rel="stylesheet" href="../web/css/style.css" />
+    <link rel="stylesheet" href="preview.css" />
+</head>
+<body>
+    <div id="app" class="hidden">
+        <div class="shell">
+            <aside>
+                <div class="brand">
+                    <div class="mark" aria-hidden="true">DDS</div>
+                    <div>
+                        <div class="brand-name">DJ Weapon Store</div>
+                        <div class="brand-sub">Diesel Dev Shack</div>
+                    </div>
+                </div>
+                <nav id="nav"></nav>
+                <div class="aside-foot">Industrial manufacture · Controlled stock</div>
+            </aside>
+            <div class="workspace">
+                <header>
+                    <div>
+                        <p class="kicker" id="kicker">Diesel Dev Shack</p>
+                        <h1 id="title">Weapon Catalog</h1>
+                    </div>
+                    <div class="header-tools">
+                        <select id="storeSelect"></select>
+                        <div class="balance" id="balance"></div>
+                        <button type="button" id="refreshBtn" class="ghost">Refresh</button>
+                        <button type="button" id="closeBtn" class="danger">Close</button>
+                    </div>
+                </header>
+                <div id="banner"></div>
+                <section id="view"></section>
+            </div>
+        </div>
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <span>Working the line</span>
+        </div>
+        <div id="toast" class="hidden"></div>
+    </div>
+    <nav id="preview-nav" aria-label="Preview sections"></nav>
+    <script src="fixtures.js"></script>
+    <script src="mock.js"></script>
+    <script src="../web/js/app.js"></script>
+    <script src="boot.js"></script>
+</body>
+</html>

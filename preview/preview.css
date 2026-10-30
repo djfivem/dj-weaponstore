@@ -1,0 +1,52 @@
+html, body {
+    background: #07080b !important;
+}
+
+html[data-clean="1"] #preview-nav {
+    display: none !important;
+}
+
+html[data-clean="1"] #toast {
+    display: none !important;
+}
+
+html[data-clean="1"][data-shot="toast"] #toast {
+    display: block !important;
+}
+
+#preview-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    background: #101216;
+    border-top: 1px solid #343b46;
+}
+
+#preview-nav a {
+    color: #a3aab4;
+    text-decoration: none;
+    border: 1px solid #343b46;
+    padding: 6px 8px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+#preview-nav a[aria-current="page"] {
+    color: #f3efe9;
+    border-color: #8d241f;
+    background: #2a201f;
+}
+
+#app {
+    padding-bottom: 56px;
+}
+
+html[data-clean="1"] #app {
+    padding-bottom: 2vh;
+}

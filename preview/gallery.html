@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DJ Weapon Store — UI screenshots</title>
+    <style>
+        body { margin: 0; background: #07080b; color: #f3efe9; font-family: "Segoe UI", sans-serif; }
+        header { padding: 28px 32px 8px; }
+        h1 { margin: 0; letter-spacing: 0.08em; text-transform: uppercase; font-size: 22px; }
+        p { color: #a3aab4; }
+        a { color: #d6453d; }
+        main { display: grid; gap: 28px; padding: 12px 32px 48px; }
+        figure { margin: 0; }
+        figcaption { margin-bottom: 8px; letter-spacing: 0.08em; text-transform: uppercase; font-size: 13px; color: #d6453d; }
+        img { width: min(1280px, 100%); border: 1px solid #343b46; background: #000; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DJ Weapon Store</h1>
+        <p>Diesel Dev Shack interface preview. Open the <a href="index.html">live preview</a> to click through the same screens.</p>
+    </header>
+    <main id="shots"></main>
+    <script>
+        const shots = [
+            ['catalog', 'Weapon Catalog'],
+            ['manufacturing', 'Weapon Manufacturing'],
+            ['bench', 'Crafting Bench'],
+            ['materials', 'Material Inventory'],
+            ['stock', 'Store Stock'],
+            ['dashboard', 'Business Dashboard'],
+            ['employees', 'Employee Management'],
+            ['recipes', 'Recipe Management'],
+            ['finance', 'Financial Management'],
+            ['sales', 'Sales History'],
+            ['mfg', 'Manufacturing History'],
+            ['settings', 'Settings'],
+            ['loading', 'Loading'],
+            ['toast', 'Toast'],
+        ];
+        const root = document.getElementById('shots');
+        root.innerHTML = shots.map(([id, label]) => `<figure><figcaption>${label}</figcaption><img src="screenshots/${id}.png" alt="${label}" /></figure>`).join('');
+    </script>
+</body>
+</html>
