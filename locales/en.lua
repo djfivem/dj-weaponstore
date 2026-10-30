@@ -1,0 +1,81 @@
+Locales = Locales or {}
+
+Locales.en = {
+    open_store = 'Open DJ Weapon Store',
+    open_bench = 'Use crafting bench',
+    missing_materials = 'Not enough materials.',
+    inventory_full = 'Inventory cannot carry that.',
+    inventory_unavailable = 'Inventory is not available.',
+    add_failed = 'The item could not be added. Materials were returned when possible.',
+    remove_failed = 'Could not remove the required items.',
+    database_unavailable = 'Database is offline. Install and start oxmysql.',
+    rate_limited = 'Slow down.',
+    too_far = 'You are too far away.',
+    no_permission = 'You do not have permission to do that.',
+    invalid_item = 'That catalog entry is not valid.',
+    invalid_store = 'That store does not exist.',
+    invalid_bench = 'That bench is not valid for this job.',
+    bench_busy = 'Someone is already using that bench.',
+    already_crafting = 'You already have a craft in progress.',
+    out_of_stock = 'That weapon is not in stock.',
+    cannot_afford = 'You cannot afford that.',
+    payment_failed = 'Payment failed. Nothing was sold.',
+    craft_started = 'Manufacturing started.',
+    craft_success = 'Manufacturing complete.',
+    craft_failed = 'The build failed inspection. Nothing was produced.',
+    craft_cancelled = 'Craft cancelled. Materials were returned.',
+    cancel_locked = 'This craft is too close to finishing to cancel.',
+    skill_failed = 'Skill check failed. No materials were used.',
+    locked = 'You do not have the XP to manufacture that yet.',
+    job_restricted = 'Your job cannot buy that.',
+    grade_restricted = 'Your grade is too low.',
+    license_required = 'A weapon license is required.',
+    insufficient_funds = 'The business account does not have enough money.',
+    capacity = 'Material storage is full.',
+    hired = 'Employee hired.',
+    fired = 'Employee removed.',
+    saved = 'Saved.',
+    purchased = 'Purchase complete.',
+    stock_updated = 'Stock updated.',
+    price_updated = 'Price updated.',
+    deposited = 'Deposit complete.',
+    withdrawn = 'Withdrawal complete.',
+    supplied = 'Supplier delivery added to storage.',
+    owner_set = 'Store owner updated.',
+    funded = 'Business account funded.',
+    materials_added = 'Materials added.',
+    not_admin = 'Admin permission required.',
+    player_offline = 'That player is not online.',
+    already_employed = 'That person already works here.',
+    cannot_fire_owner = 'The owner cannot be fired.',
+    bench_saved = 'Bench saved.',
+    bench_removed = 'Bench removed.',
+    bad_model = 'That prop is not on the bench allow list.',
+    bad_quantity = 'That quantity is not allowed.',
+    bad_price = 'Price is outside the allowed range.',
+    recipe_disabled = 'That recipe is disabled.',
+    direct_disabled = 'Direct manufacturing sales are disabled.',
+    busy = 'That action is already running.',
+    internal = 'Something went wrong. The attempt was logged.',
+    refund_failed = 'A refund failed. Check the audit log before retrying.',
+    timeout = 'The server did not answer.',
+    unknown_action = 'Unknown action.',
+    no_response = 'No response from the server.',
+    nui_failed = 'The interface could not reach the client.',
+    collect_empty = 'There is no commission waiting.',
+    collected = 'Commission collected.',
+    placement_saved = 'Bench placement saved.',
+    placement_cancelled = 'Placement cancelled.',
+    database_banner = 'oxmysql is not running. Catalog is visible, but business data cannot be saved.',
+}
+
+function L(key, ...)
+    local lang = (Config and Config.Locale) or 'en'
+    local pack = Locales[lang] or Locales.en
+    local str = (pack and pack[key]) or (Locales.en and Locales.en[key]) or key
+    if select('#', ...) > 0 then
+        local ok, formatted = pcall(string.format, str, ...)
+        if ok then return formatted end
+    end
+    return str
+end
